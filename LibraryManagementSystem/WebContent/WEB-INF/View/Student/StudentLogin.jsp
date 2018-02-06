@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student</title>
+<title>Student login</title>
 </head>
 <body>
+<h1 text-align="center">Welcome To Student Section </h1>
+<h3>Please Login to Application </h3>
 <form action="./studlogin" method="get">
 <pre>
 Email:<input type="text" name="email"/>
