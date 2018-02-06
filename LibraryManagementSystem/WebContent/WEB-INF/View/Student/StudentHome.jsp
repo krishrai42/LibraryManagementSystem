@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Library Management System</title>
+<title>Student Home</title>
 </head>
 <body>
-
-<a href="LibrarianLogin.jsp">Librarian</a>||<a href="StudentLogin.jsp">Student</a>
+<h1>this is student Home page</h1>
+<h1>this is student Home page</h1>
+<h1>this is student Home page</h1>
+<h1>this is student Home page</h1>
+<h1>this is student Home page</h1>
+<h1>this is student Home page</h1>
 </body>
 </html>

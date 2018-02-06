@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Library Management System</title>
+<title>Registration Successful</title>
 </head>
 <body>
-
-<a href="LibrarianLogin.jsp">Librarian</a>||<a href="StudentLogin.jsp">Student</a>
+<h3>Registration Successful</h3>
+<a href="StudentLogin.jsp">Return to login page</a>
 </body>
 </html>

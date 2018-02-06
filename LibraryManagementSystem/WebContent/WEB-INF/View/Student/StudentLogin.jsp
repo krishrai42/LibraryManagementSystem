@@ -4,10 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Library Management System</title>
+<title>Student</title>
 </head>
 <body>
-
-<a href="LibrarianLogin.jsp">Librarian</a>||<a href="StudentLogin.jsp">Student</a>
+<form action="./studlogin" method="get">
+<pre>
+Email:<input type="text" name="email"/>
+Password:<input type="text" name="email"/>
+<input type="submit"value="login"/><a href="StudForgotpassword.jsp">Forgot Password</a>
+Not Yet Registered<a href="StudentSignup.jsp">Signup</a>
+</pre>
+</form>
 </body>
 </html>

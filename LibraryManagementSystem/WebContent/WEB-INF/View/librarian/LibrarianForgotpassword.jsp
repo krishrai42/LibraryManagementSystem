@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Library Management System</title>
+<title>Librarian forgot passowrd</title>
 </head>
 <body>
-
-<a href="LibrarianLogin.jsp">Librarian</a>||<a href="StudentLogin.jsp">Student</a>
+<form action="./libforgotpwd" method="get">
+EnterEmail:<input type="text" value="email"/>
+<input type="submit" value="GetPassword">
+</form>
+Your Password Is:
 </body>
 </html>
