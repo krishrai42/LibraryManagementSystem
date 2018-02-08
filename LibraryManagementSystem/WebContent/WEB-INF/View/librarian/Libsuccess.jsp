@@ -8,6 +8,11 @@
 </head>
 <body>
 <h3>Registration Successful</h3>
-<a href="LibraianLogin.jsp">Return to login page</a>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+
+<a href="/WEB-INF/View/librarian/LibrarianLogin.jsp">Return to login page</a>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
 <pre>
-<form action="./libreg" method="post">
+<form action="libreg" method="post">
 <h3>Enter The required Details</h3>
  LibrarianID:<input type="text" name="id"/>
  Name:<input type="text" name="name"/>
