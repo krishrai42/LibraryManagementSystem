@@ -13,6 +13,6 @@
 <h3>Registration Successful</h3>
 <h3>Registration Successful</h3>
 
-<a href="/WEB-INF/View/librarian/LibrarianLogin.jsp">Return to login page</a>
+<a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianLogin.jsp">Return to login page</a>
 </body>
 </html>

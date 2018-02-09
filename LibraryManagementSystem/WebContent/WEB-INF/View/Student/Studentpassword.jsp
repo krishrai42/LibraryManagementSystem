@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Librarian forgot passowrd</title>
+<title>Student Password retrieval</title>
 </head>
 <body>
-<font color=red size=5>${MSG}</font>
-<form action="./libforgotpwd" method="get">
-EnterEmail:<input type="text" name="email"/>
-<input type="submit" value="GetPassword">
-</form>
+<h2>Your password is ${PASSWORD}</h2>
 </body>
 </html>

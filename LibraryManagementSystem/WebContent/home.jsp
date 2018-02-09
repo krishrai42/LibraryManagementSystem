@@ -4,5 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%@ include file="/WEB-INF/View/librarian/LibrarianSignup.jsp" %>  
+<%-- <%@ include file="/WEB-INF/View/librarian/LibrarianSignup.jsp" %>  --%>
+
+
+
+<jsp:include page ='<%=request.getParameter("myUrlVariable")%>'/>
+</head>
+ 
 </html>

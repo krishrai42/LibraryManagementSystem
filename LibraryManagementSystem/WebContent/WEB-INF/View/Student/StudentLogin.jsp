@@ -9,12 +9,13 @@
 <body>
 <h1 text-align="center">Welcome To Student Section </h1>
 <h3>Please Login to Application </h3>
+<h3>${MSG}</h3>
 <form action="./studlogin" method="get">
 <pre>
 Email:<input type="text" name="email"/>
-Password:<input type="text" name="email"/>
-<input type="submit"value="login"/><a href="StudForgotpassword.jsp">Forgot Password</a>
-Not Yet Registered<a href="StudentSignup.jsp">Signup</a>
+Password:<input type="text" name="password"/>
+<input type="submit"value="login"/><a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudForgotpassword.jsp">Forgot Password</a>
+Not Yet Registered<a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudentSignup.jsp">Signup</a>
 </pre>
 </form>
 </body>

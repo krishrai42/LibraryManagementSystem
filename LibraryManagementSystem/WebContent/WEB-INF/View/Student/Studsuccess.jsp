@@ -8,6 +8,12 @@
 </head>
 <body>
 <h3>Registration Successful</h3>
-<a href="StudentLogin.jsp">Return to login page</a>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+<h3>Registration Successful</h3>
+
+<a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudentLogin.jsp">Return to login page</a>
 </body>
 </html>

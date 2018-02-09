@@ -7,10 +7,11 @@
 <title>Student Forgot password</title>
 </head>
 <body>
+<font color=red size=5>${MSG}</font>
 <form action="./studforgotpwd" method="get">
-EnterEmail:<input type="text" value="email"/>
+EnterEmail:<input type="text" name="email"/>
 <input type="submit" value="GetPassword">
 </form>
-Your Password Is:
+
 </body>
 </html>
