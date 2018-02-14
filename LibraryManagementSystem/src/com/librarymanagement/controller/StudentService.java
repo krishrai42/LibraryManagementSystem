@@ -61,6 +61,36 @@ public static int verifyStudent(String email, String pwd) {
 	System.out.println(x);
 	return x;
 }
+public int verifyStudent(int studid) {
+	int x=0;
+	Connection con=null;
+	PreparedStatement ps=null;
+	ResultSet rs=null;
+	System.out.println("verify Student called()");
+	
+	
+	try {
+		con=JDBCUtil.getdbConnection();
+		String sql="Select * from student where sid= ?";
+		ps=con.prepareStatement(sql);
+		ps.setInt(1,studid);
+		
+		rs = ps.executeQuery();
+		if(rs.next()) {
+		x=1;
+		System.out.println(x);
+		System.out.println("Student verified");
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	finally {JDBCUtil.cleanup(rs,ps,con);
+	//return x;
+	}
+	System.out.println("returning to calling method()");
+	System.out.println(x);
+	return x;
+}
 
 public String getPasswordbyemail(String email) {
 	String pwd=null;

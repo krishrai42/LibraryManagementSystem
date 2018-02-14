@@ -13,7 +13,7 @@
 <body>
 <h1 text-align="center">Welcome To Librarian Section </h1>
 <h3>Login to perform task</h3>
-<form action="./liblogin/*" method="get">
+<form action="liblogin" method="get">
 <pre>
 Email:<input type="text" name="email"/>
 Password:<input type="text" name="password"/>

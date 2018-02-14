@@ -31,7 +31,7 @@ public class Librarianlogin extends HttpServlet {
 		if(x==1) {
 		session.setAttribute("Email", email);
 	//	PrintWriter out=res.getWriter();
-		out.println("Login Success");
+		System.out.println("Login Success");
 		result="/WEB-INF/View/librarian/LibrarianHome.jsp";	
 	}
 		else {

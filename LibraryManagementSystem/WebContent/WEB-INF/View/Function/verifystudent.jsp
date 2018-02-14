@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Home</title>
+<title>Verify Student</title>
 </head>
 <body>
-<h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp">Search Book</a></h1>
-
-<h1>this is student Home page</h1>
+<form action="verifystud" method="post">
+Enter StudentID:<input type="text" name="name"/>
+<input type="submit" value="Search Student"/>
+</form>
 </body>
 </html>

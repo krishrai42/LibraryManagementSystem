@@ -38,7 +38,7 @@ public class Studentregister extends HttpServlet {
 		String city=req.getParameter("city");
 		String state=req.getParameter("state");
 		String dob=req.getParameter("dob");
-		String dep=req.getParameter("department");
+		String dep=req.getParameter("dept");
 		String mob=req.getParameter("mobile");
 		StudentTO sto=new StudentTO(id, name,mob,city,state,dob, email, pwd, gender,dep);
 		System.out.println("register Student called()");

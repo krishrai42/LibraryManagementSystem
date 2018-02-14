@@ -26,7 +26,7 @@ finally {JDBCUtil.cleanup(ps,con);
 return x;
 }
 
-public static int verifyLibrarian(String email, String pwd) {
+protected  int verifyLibrarian(String email, String pwd) {
 	int x=0;
 	Connection con=null;
 	PreparedStatement ps=null;

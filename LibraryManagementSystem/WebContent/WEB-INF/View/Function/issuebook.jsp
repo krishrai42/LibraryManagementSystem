@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Home</title>
+<title>Issue Book </title>
 </head>
 <body>
-<h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp">Search Book</a></h1>
+<h1>Issue Book</h1>
+<h1>Issue Book</h1>
+<h1>Issue Book</h1>
+<h1>Issue Book</h1>
+<h1>Issue Book</h1>
+<h1>Issue Book</h1>
 
-<h1>this is student Home page</h1>
 </body>
 </html>

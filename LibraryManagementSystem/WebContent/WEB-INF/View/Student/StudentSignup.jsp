@@ -21,7 +21,7 @@
  <input type="radio" name="gender" value="male" checked> Male<br>
  <input type="radio" name="gender" value="female"> Female<br>
  <input type="radio" name="gender" value="other"> Other 
- Department<select required>
+ Department<select name="dept">
   <option value="">None</option>
   <option value="cse">Computer Science</option>
   <option value="civil">Civil</option>
