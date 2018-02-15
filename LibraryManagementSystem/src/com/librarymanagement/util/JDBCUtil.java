@@ -24,6 +24,14 @@ public static void cleanup(Statement st,Connection con) {
 		System.out.println(e);
 	}
 }
+public static void cleanup(CallableStatement cs,Connection con) {
+	try {
+		if(cs!=null)cs.close();
+		if(con!=null)con.close();
+	}catch(Exception e) {
+		System.out.println(e);
+	}
+}
 public static void cleanup(ResultSet rs,Statement st,Connection con) {
 	try {
 		if(rs!=null)rs.close();

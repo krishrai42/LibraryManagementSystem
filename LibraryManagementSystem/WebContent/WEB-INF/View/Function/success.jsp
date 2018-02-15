@@ -12,6 +12,9 @@
 <h3> ${ERR}</h3>
 <h3> ${STudMSG}</h3>
 <h3> ${StudERR}</h3>
+<h3> ${IBSUCCESS}</h3>
+<h3> ${BCSUCCESS}</h3>
+
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/addbook.jsp"> Add Another Books</a> </h1>
 
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h1>

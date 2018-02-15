@@ -47,6 +47,33 @@ finally {JDBCUtil.cleanup(ps,con);
 }
 return x;
 }
+public  String checkbookstatus(int bookid){
+	int x=0;
+PreparedStatement ps=null;
+Connection con = null;
+ResultSet rs=null;
+String value="";
+try {
+	con=JDBCUtil.getdbConnection();
+	String sql="Select bstatus from book WHERE bid=? ";
+	ps=con.prepareStatement(sql);
+	ps.setInt(1,bookid);
+	rs=ps.executeQuery();
+	if(rs.next()) {
+		value=rs.getString("bstatus");
+	}
+	else {
+		value="No book found";
+	}
+}catch(Exception e) {
+	e.printStackTrace();
+}
+finally {JDBCUtil.cleanup(ps,con);
+
+}
+System.out.println(value);
+return value;
+}
 }
 
 

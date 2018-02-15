@@ -7,12 +7,11 @@
 <title>Collect Books</title>
 </head>
 <body>
-<h1>Collect Books</h1>
-<h1>Collect Books</h1>
-<h1>Collect Books</h1>
-<h1>Collect Books</h1>
-<h1>Collect Books</h1>
-<h1>Collect Books</h1>
+<form action="collectbook" method="post">
+<pre>
+Student ID:<input type="text" name="sid" >
+Book ID:<input type="text" name="bid" >
+<input type="submit" value="Collect Book" >
 
 </body>
 </html>
