@@ -12,6 +12,7 @@
 Student ID:<input type="text" name="sid" >
 Book ID:<input type="text" name="bid" >
 <input type="submit" value="Collect Book" >
-
+</pre>
+</form>
 </body>
 </html>

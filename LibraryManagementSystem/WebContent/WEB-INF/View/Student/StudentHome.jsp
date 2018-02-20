@@ -8,7 +8,13 @@
 </head>
 <body>
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp">Search Book</a></h1>
-
+<form action="showstudaccount" method="post">
+<pre>
+Student ID:<input type="text" name="sid" >
+<input type="submit" value="Show Account" >
+</pre>
+</form>
 <h1>this is student Home page</h1>
+<h3>  ${BOOKSDETAIL}</h3>
 </body>
 </html>
