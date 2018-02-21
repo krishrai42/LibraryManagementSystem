@@ -7,10 +7,13 @@
 <title>Remove Book From Library</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <form action="deletebook" method="post">
 Enter BookID:<input type="text" name="name"/>
 <input type="submit" value="Delete"/>
 </form>
-
+<%} %>
 </body>
 </html>

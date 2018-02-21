@@ -7,6 +7,9 @@
 <title>Collect Books</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <form action="collectbook" method="post">
 <pre>
 Student ID:<input type="text" name="sid" >
@@ -14,5 +17,17 @@ Book ID:<input type="text" name="bid" >
 <input type="submit" value="Collect Book" >
 </pre>
 </form>
+<%} 
+
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%>  
 </body>
 </html>

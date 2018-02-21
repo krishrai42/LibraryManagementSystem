@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Student Issued Book Detail</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="User") {
+%>
 <%! List<BookIssueTO> BookList; %>
  <table cellpadding="5" cellspacing="5" border="1">
                     <thead>
@@ -65,12 +68,24 @@
    
    				   </tbody>
                 </table>
-                <h3> ${BOOK}</h3>
+                <h3> ${BOOKSDETAIL}</h3>
                 
 
 
 <h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp"> Search Another Books</a> </h3>
 
 <h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h3>
+<%} 
+ 
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

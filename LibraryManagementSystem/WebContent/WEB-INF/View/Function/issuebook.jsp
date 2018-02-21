@@ -17,6 +17,9 @@
   </script>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <h3> ${ISSUEBOOKERR}</h3>
 <form action="issuebook" method="post">
 <pre>
@@ -27,5 +30,6 @@ Issue Date:<input type="text"id="datepicker" name="date" >
 <input type="submit" value="Issue Book" >
 </pre>
 </form>
+<%} %>
 </body>
 </html>

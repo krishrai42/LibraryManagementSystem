@@ -8,6 +8,9 @@
 <title>Book Search Result</title>
 </head>
 <body>
+<%
+if(session!=null) {
+%>
 <%! List<BookTO> BookList; %>
  <table cellpadding="5" cellspacing="5" border="1">
                     <thead>
@@ -72,7 +75,27 @@
 
 
 <h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp"> Search Another Books</a> </h3>
-
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h3>
+<%
+} else if(session!=null&&session.getAttribute("Role")=="User"){
+%>
+<h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudentHome.jsp"> move to home page</a> </h3>
+<%
+}%>
+<%} 
+ 
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

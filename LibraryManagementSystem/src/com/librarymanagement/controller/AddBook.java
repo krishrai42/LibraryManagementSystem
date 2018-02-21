@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AddBook
@@ -21,6 +22,9 @@ public class AddBook extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		  HttpSession session = req.getSession(false);
+		  String role=(String) session.getAttribute("Role");
+		  if(session!=null&&role=="Admin") {
 		BookService bookservice=new BookService();
 		int id=Integer.parseInt(req.getParameter("bid"));
 		String bname=req.getParameter("bname");
@@ -51,5 +55,11 @@ public class AddBook extends HttpServlet {
 		RequestDispatcher rd=req.getRequestDispatcher(result);
 		rd.forward(req,res);
 	}
+		  else {
+			  RequestDispatcher rd=req.getRequestDispatcher("/WEB-INF/View/librarian/LibrarianLogin.jsp");
+				rd.forward(req,res);
+			}
+	}
+	
 
 }

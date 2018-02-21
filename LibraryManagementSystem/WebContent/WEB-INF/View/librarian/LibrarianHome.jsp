@@ -7,6 +7,11 @@
 <title>Librarian Home Page</title>
 </head>
 <body>
+<%
+if(session.getAttribute("Role")=="Admin") {
+%>
+
+
 <h1>Welcome to Library Management ${Email} </h1>
 <h3> ${BMSG}</h3>
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/addbook.jsp"> Add Books</a> </h1>
@@ -27,6 +32,17 @@
 
 </form>
 <h1>This is Librarian Home Page </h1>
+<%} 
+ 
 
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

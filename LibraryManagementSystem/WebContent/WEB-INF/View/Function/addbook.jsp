@@ -7,6 +7,9 @@
 <title>Add Books To Library</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <h3>Enter books details to add in library</h3>
 <h3> ${ERR}</h3>
 <form action="addbook" method="post">
@@ -28,6 +31,17 @@ Book Status:<select name="status">
 
 </pre>
 </form>
+<%} 
+ 
 
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

@@ -7,6 +7,9 @@
 <title>Student Home</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="User") {
+%>
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp">Search Book</a></h1>
 <form action="showstudaccount" method="post">
 <pre>
@@ -16,5 +19,17 @@ Student ID:<input type="text" name="sid" >
 </form>
 <h1>this is student Home page</h1>
 <h3>  ${BOOKSDETAIL}</h3>
+<%} 
+ 
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

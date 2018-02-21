@@ -7,10 +7,12 @@
 <title>Search Book</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="User"||session.getAttribute("Role")=="Admin") {
+%>
 <form action="searchbook" method="post">
 <table><tr><td><h2> Select search Category</h2></td></tr> </table>
-<tr>
-<td><select name="category">
+<tr><td><select name="category">
 <option value="">Select</option>
 <option value="ID">BookID</option>
 <option value="name">Book Name</option>
@@ -24,6 +26,20 @@
 <input type="text" name="name"/>
 <input type="submit" value="Search"/>
 </form>
-
 </body>
+<%} 
+ 
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
+
+
+
 </html>

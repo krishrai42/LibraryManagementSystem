@@ -13,13 +13,17 @@
 <body>
 <h1 text-align="center">Welcome To Librarian Section </h1>
 <h3>Login to perform task</h3>
-<form action="liblogin" method="get">
+<form action="liblogin" method="get" id="myform">
 <pre>
-Email:<input type="text" name="email"/>
-Password:<input type="text" name="password"/>
-<input type="submit"value="login"/><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianForgotpassword.jsp">Forgot Password</a>
+Email:<input type="email" id="txtEmail"name="email"/>
+Password:<input type="password" name="password"id="pwd"/>
+<input type="submit"value="login" /><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianForgotpassword.jsp">Forgot Password</a>
 Not Yet Registered<a  href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianSignup.jsp">Signup</a>
 </pre>
-</form>    
+</form>
+
+
+<p id="error_para" ></p>
+
 </body>
 </html>

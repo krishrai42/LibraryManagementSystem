@@ -30,6 +30,7 @@ public class Studentlogin extends HttpServlet {
 		String result="";
 		if(x==1) {
 		session.setAttribute("Email", email);
+		session.setAttribute("Role", "User");
 		out.println("Login Success");
 		result="/WEB-INF/View/Student/StudentHome.jsp";	
 	}

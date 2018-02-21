@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class librarianhome
@@ -21,6 +22,9 @@ public class librarianhome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		 HttpSession session = req.getSession(false);
+		  String role=(String) session.getAttribute("Role");
+		  if(session!=null&&role=="Admin") {
 		String value=req.getParameter("book");
 		System.out.println("Inside librarian home");
 		System.out.println(value);
@@ -48,5 +52,9 @@ public class librarianhome extends HttpServlet {
 		rd.forward(req,res);
 		//res.sendRedirect(result);
 	}
-
+		  else {
+			  RequestDispatcher rd=req.getRequestDispatcher("/WEB-INF/View/librarian/LibrarianLogin.jsp");
+				rd.forward(req,res);
+		  }
+	}
 }

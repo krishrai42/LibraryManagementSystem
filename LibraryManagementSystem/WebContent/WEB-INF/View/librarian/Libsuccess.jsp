@@ -7,6 +7,9 @@
 <title>Registration Successful</title>
 </head>
 <body>
+<%
+if(session!=null&&session.getAttribute("Role")=="Admin") {
+%>
 <h3>Registration Successful</h3>
 <h3>Registration Successful</h3>
 <h3>Registration Successful</h3>
@@ -14,5 +17,17 @@
 <h3>Registration Successful</h3>
 
 <a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianLogin.jsp">Return to login page</a>
+<%} 
+ 
+
+
+else if(session.getAttribute("Role")==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+	rd.forward(request, response);
+	return;
+}
+
+%> 
 </body>
 </html>

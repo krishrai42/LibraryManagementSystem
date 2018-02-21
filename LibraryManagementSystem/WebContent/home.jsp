@@ -7,8 +7,21 @@
 <%-- <%@ include file="/WEB-INF/View/librarian/LibrarianSignup.jsp" %>  --%>
 
 
+<%
+  if (session == null)
+  {
+    
+    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("index.jsp");
+    dispatcher.forward(request,response);
+  }
 
+
+
+else {
+%>
 <jsp:include page ='<%=request.getParameter("myUrlVariable")%>'/>
+<%
+}%>
 </head>
  
 </html>

@@ -30,6 +30,7 @@ public class Librarianlogin extends HttpServlet {
 		String result="";
 		if(x==1) {
 		session.setAttribute("Email", email);
+		session.setAttribute("Role", "Admin");
 	//	PrintWriter out=res.getWriter();
 		System.out.println("Login Success");
 		result="/WEB-INF/View/librarian/LibrarianHome.jsp";	
