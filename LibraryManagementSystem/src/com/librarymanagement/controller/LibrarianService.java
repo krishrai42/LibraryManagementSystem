@@ -3,7 +3,7 @@ import java.sql.*;
 import com.librarymanagement.model.librarianTO;
 import com.librarymanagement.util.JDBCUtil;
 public class LibrarianService {
-public static  int registerLibrarian(librarianTO lto){
+public int registerLibrarian(librarianTO lto){
 	int x=0;
 PreparedStatement ps=null;
 Connection con = null;

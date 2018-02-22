@@ -12,8 +12,8 @@ if(session!=null&&session.getAttribute("Role")=="Admin") {
 %>
 <form action="collectbook" method="post">
 <pre>
-Student ID:<input type="text" name="sid" >
-Book ID:<input type="text" name="bid" >
+Student ID:<input type="text" name="sid" required>
+Book ID:<input type="text" name="bid" required>
 <input type="submit" value="Collect Book" >
 </pre>
 </form>

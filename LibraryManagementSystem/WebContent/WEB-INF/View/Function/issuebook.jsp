@@ -23,9 +23,9 @@ if(session!=null&&session.getAttribute("Role")=="Admin") {
 <h3> ${ISSUEBOOKERR}</h3>
 <form action="issuebook" method="post">
 <pre>
-Student ID:<input type="text" name="sid" >
-Book ID:<input type="text" name="bid" >
-Issue Date:<input type="text"id="datepicker" name="date" >
+Student ID:<input type="text" name="sid" required/>
+Book ID:<input type="text" name="bid" required />
+Issue Date:<input type="text"id="datepicker" name="date" required>
 
 <input type="submit" value="Issue Book" >
 </pre>

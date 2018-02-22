@@ -70,7 +70,7 @@ if(session!=null) {
    
    				   </tbody>
                 </table>
-                <h3> ${BOOK}</h3>
+            
                 
 
 

@@ -11,7 +11,7 @@
 if(session!=null&&session.getAttribute("Role")=="Admin") {
 %>
 <form action="verifystud" method="post">
-Enter StudentID:<input type="text" name="name"/>
+Enter StudentID:<input type="text" name="name" required/>
 <input type="submit" value="Search Student"/>
 <%} 
  

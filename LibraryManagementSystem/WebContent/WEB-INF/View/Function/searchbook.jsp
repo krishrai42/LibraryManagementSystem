@@ -10,9 +10,9 @@
 <%
 if(session!=null&&session.getAttribute("Role")=="User"||session.getAttribute("Role")=="Admin") {
 %>
-<form action="searchbook" method="post">
+<form action="searchbook" method="post"onmouseover="return Function()">
 <table><tr><td><h2> Select search Category</h2></td></tr> </table>
-<tr><td><select name="category">
+<tr><td><select name="category"id="bstatus">
 <option value="">Select</option>
 <option value="ID">BookID</option>
 <option value="name">Book Name</option>
@@ -23,9 +23,19 @@ if(session!=null&&session.getAttribute("Role")=="User"||session.getAttribute("Ro
 <option value="all">all</option>
 
 </select></td></tr>
-<input type="text" name="name"/>
+<input type="text" name="name"id="name"/>
 <input type="submit" value="Search"/>
 </form>
+<script type="text/javascript">
+function Function(){
+var Status = document.getElementById( "bstatus" );
+if( Status.value == "all")
+{
+	document.getElementById("name").disabled = true;
+ return false;
+}
+}
+</script>
 </body>
 <%} 
  
