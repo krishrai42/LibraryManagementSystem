@@ -18,6 +18,9 @@ Student ID:<input type="text" name="sid" >
 </pre>
 </form>
 <h1>this is student Home page</h1>
+<form action="StudLogout" method="post">
+		<input type="submit" value="Logout">
+	</form>
 <h3>  ${BOOKSDETAIL}</h3>
 <%} 
  

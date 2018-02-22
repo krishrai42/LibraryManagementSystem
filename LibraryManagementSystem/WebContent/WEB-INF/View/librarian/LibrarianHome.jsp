@@ -22,15 +22,9 @@ if(session.getAttribute("Role")=="Admin") {
 <h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/deletebook.jsp">Delete Book</a></h1>
 
 
-<form action="libhome" method="get">
-<input type="submit" value="Add Books" name="book"/>
-<input type="submit" value="Issue Books" name="book"/>
-<input type="submit" value="Collect Books" name="book"/>
-<input type="submit" value="Search Books" name="book"/>
-<input type="submit" value="Delete Books" name="book"/>
-<input type="submit" value="Verify Books" name="book"/>
-
-</form>
+<form action="Logout" method="post">
+		<input type="submit" value="Logout">
+	</form>
 <h1>This is Librarian Home Page </h1>
 <%} 
  

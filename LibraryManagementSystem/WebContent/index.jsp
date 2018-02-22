@@ -10,6 +10,7 @@
 <title>Library Management System</title>
 </head>
 <body>
+<h3> ${LOGOUT}</h3>
 <h1>Please Select your Credential</h1>
 <form action="indexservlet" method="get">
 <input type="radio" name="position" value="Librarian"> Librarian<br>

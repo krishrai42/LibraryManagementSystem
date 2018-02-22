@@ -13,17 +13,43 @@
 <body>
 <h1 text-align="center">Welcome To Librarian Section </h1>
 <h3>Login to perform task</h3>
+<h3>  ${MSG}</h3>
 <form action="liblogin" method="get" id="myform">
 <pre>
-Email:<input type="email" id="txtEmail"name="email"/>
-Password:<input type="password" name="password"id="pwd"/>
-<input type="submit"value="login" /><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianForgotpassword.jsp">Forgot Password</a>
+Email:<input type="email" id="txtEmail"name="email" onfocusout="emailFunction()"required/>
+Password:<input type="password" name="password"id="pwd"onfocusout="pwdFunction()"required/>
+<input type="submit"value="login"onmouseover="pwdFunction()" /><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianForgotpassword.jsp">Forgot Password</a>
 Not Yet Registered<a  href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianSignup.jsp">Signup</a>
 </pre>
 </form>
 
 
 <p id="error_para" ></p>
+<script>
+// Focus = Changes the background color of input to yellow
+function emailFunction() {
+    document.getElementById("txtEmail").style.background = "yellow";
+    var email = document.getElementById( "txtEmail" );
+    if( email.value == "" || email.value.indexOf( "@" ) == -1 )
+    {
+     error = " You Have To Write Valid Email Address. ";
+     document.getElementById( "error_para" ).innerHTML = error;
+     return false;
+    }
+}
+
+// No focus = Changes the background color of input to red
+function pwdFunction() {
+    document.getElementById("pwd").style.background = "red";
+    var password = document.getElementById( "pwd" );
+    if( password.value == "")
+    {
+     error = " Password Cannot Be Empty. ";
+     document.getElementById( "error_para" ).innerHTML = error;
+     return false;
+    }
+}
+</script>
 
 </body>
 </html>

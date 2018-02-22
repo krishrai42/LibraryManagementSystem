@@ -12,8 +12,8 @@
 <h3>Enter The required Details</h3>
  LibrarianID:<input type="text" name="id"/>
  Name:<input type="text" name="name"/>
- Email:<input type="text" name="email"/>
- Password:<input type="text" name="password"/>
+ Email:<input type="email" name="email"/>
+ Password:<input type="password" name="password"/>
  <input type="radio" name="gender" value="male" checked> Male<br>
  <input type="radio" name="gender" value="female"> Female<br>
  <input type="radio" name="gender" value="other"> Other 
