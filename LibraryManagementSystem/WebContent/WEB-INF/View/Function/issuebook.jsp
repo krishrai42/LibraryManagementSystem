@@ -21,6 +21,7 @@
 if(session!=null&&session.getAttribute("Role")=="Admin") {
 %>
 <h3> ${ISSUEBOOKERR}</h3>
+<h3> ${STUDERRR}</h3>
 <form action="issuebook" method="post">
 <pre>
 Student ID:<input type="text" name="sid" required/>
@@ -30,6 +31,7 @@ Issue Date:<input type="text"id="datepicker" name="date" required>
 <input type="submit" value="Issue Book" >
 </pre>
 </form>
+<h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h1>
 <%} %>
 </body>
 </html>

@@ -1,5 +1,8 @@
 package com.librarymanagement.controller;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.librarymanagement.model.StudentTO;
 import com.librarymanagement.util.JDBCUtil;
 public class StudentService {
@@ -93,7 +96,46 @@ public int verifyStudent(String studid) {
 	System.out.println(x);
 	return x;
 }
+public Map<Integer,Integer>  checkStudent(String studid) {
+	  Map<Integer,Integer> mapvalue = new HashMap<Integer,Integer>();
+	int x=0;
+	Connection con=null;
+	PreparedStatement ps=null;
+	ResultSet rs=null;
+	System.out.println("verify Student called()");
+	int y= verifyStudent(studid);
+	System.out.println("verify Student returned()"+y);
+	mapvalue.put(1, y);
+	if(y==1) {
+		
+	try {
+		con=JDBCUtil.getdbConnection();
+		String sql="SELECT count(*) as rowcount FROM book_issued where sid=?;";
+		ps=con.prepareStatement(sql);
+		ps.setString(1,studid);
+		
+		rs = ps.executeQuery();
+		if(rs.next()) {
+			int count = rs.getInt("rowcount");
+			mapvalue.put(2,count);
+		x=1;
+		System.out.println(x);
+		System.out.println("no. of book issued"+count);
+		System.out.println("Student checked");
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	finally {JDBCUtil.cleanup(rs,ps,con);
+	//return x;
+	}
+	System.out.println("returning to calling method()");
+	System.out.println(x);
+//	return mapvalue;
+	}
 
+	return mapvalue;
+}
 public String getPasswordbyemail(String email) {
 	String pwd=null;
 	Connection con = null;

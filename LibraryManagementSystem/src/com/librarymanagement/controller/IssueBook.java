@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,13 +31,27 @@ public class IssueBook extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out=res.getWriter();
+		Map<Integer,Integer> mapval = new HashMap<Integer,Integer>();
 		String studid=req.getParameter("sid");
 		String bookid=req.getParameter("bid");
 		String issuedate=req.getParameter("date");
 		String result="";
 		BookService bs=new BookService();
-		//StudentService ss=new StudentService();
-	//	System.out.println("checking Student status");
+		StudentService ss=new StudentService();
+		System.out.println("checking Student status");
+		mapval=ss.checkStudent(studid);
+		int val = mapval.get(1);
+		if (val==0) {
+			System.out.println("print no Student found status");
+			String msg="No student with this sid found";
+			req.setAttribute("STUDERRR", msg);
+			result ="/WEB-INF/View/Function/issuebook.jsp";
+		}
+		else {
+			int val1 = mapval.get(2);
+			System.out.println(val1);  
+			if(val1<=2) {
+		System.out.println("checking Student status");
 		System.out.println("checking book status");
 		String value=bs.checkbookstatus(bookid);
 		System.out.println(value);  
@@ -48,7 +64,7 @@ public class IssueBook extends HttpServlet {
 			}
 		   else	if (value.equals("Avail")){
 			System.out.println("inside issuebook block");
-			PreparedStatement ps=null;
+	//		PreparedStatement ps=null;
 			CallableStatement cs=null;
 			Connection con = null;
 			try {
@@ -86,6 +102,13 @@ public class IssueBook extends HttpServlet {
 		String msg="Book is Already Issued";
 			req.setAttribute("ISSUEBOOKERR", msg);
 			result ="/WEB-INF/View/Function/issuebook.jsp";
+		}
+		}
+			else {
+				String msg=" 3 Books are Already Issued! maximum 3 books can be issued to a student";
+				req.setAttribute("ISSUEBOOKERR", msg);
+				result ="/WEB-INF/View/Function/issuebook.jsp";
+			}
 		}
 		RequestDispatcher rd=req.getRequestDispatcher(result);
 		rd.forward(req,res);

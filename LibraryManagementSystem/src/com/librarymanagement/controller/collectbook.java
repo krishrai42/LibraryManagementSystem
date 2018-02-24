@@ -5,6 +5,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +25,8 @@ public class collectbook extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int studid=Integer.parseInt(req.getParameter("sid"));
-		int bookid=Integer.parseInt(req.getParameter("bid"));
+		String studid=req.getParameter("sid");
+		String bookid=req.getParameter("bid");
 		CallableStatement cs=null;
 		Connection con = null;
 		String result="";
@@ -36,8 +37,8 @@ public class collectbook extends HttpServlet {
 			con.setAutoCommit(false);
 			System.out.println("starting transaction");
 			cs=con.prepareCall("call Collect_Book(?,?)");
-			cs.setInt(1, studid);
-			cs.setInt(2, bookid);
+			cs.setString(1, studid);
+			cs.setString(2, bookid);
 			
 			cs.execute();
 			System.out.println("Book Collected Successfully");
@@ -57,6 +58,8 @@ public class collectbook extends HttpServlet {
 		String msg="Book Collected Successfully";
 		req.setAttribute("BCSUCCESS", msg);
 		result ="/WEB-INF/View/Function/success.jsp";
+		RequestDispatcher rd=req.getRequestDispatcher(result);
+		rd.forward(req,res);
 	}
-
+	
 }

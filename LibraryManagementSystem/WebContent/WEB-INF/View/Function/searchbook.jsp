@@ -36,6 +36,7 @@ if( Status.value == "all")
 }
 }
 </script>
+<h1><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h1>
 </body>
 <%} 
  

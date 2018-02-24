@@ -13,7 +13,7 @@
 <form action="./studlogin" method="get"onsubmit="return Function()">
 <pre>
 Email:<input type="text" name="email"id="email"/>
-Password:<input type="text" name="password"id="pwd"/>
+Password:<input type="password" name="password"id="pwd"/>
 <input type="submit"value="login"/><a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudForgotpassword.jsp">Forgot Password</a>
 Not Yet Registered<a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudentSignup.jsp">Signup</a>
 </pre>

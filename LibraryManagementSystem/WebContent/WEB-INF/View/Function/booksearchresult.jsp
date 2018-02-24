@@ -40,7 +40,7 @@ if(session!=null) {
 		<tr>
 
 			
-			<td><%=BookList.get(i).getBookid() %></td>
+		<  	<td><%=BookList.get(i).getBookid() %></td>
 			<td><%=BookList.get(i).getBookName() %></td>
 			<td><%=BookList.get(i).getBookAuthor() %></td>
 			<td><%=BookList.get(i).getBookCategory() %></td>
