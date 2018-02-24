@@ -9,18 +9,18 @@ PreparedStatement ps=null;
 Connection con = null;
 try {
 	con=JDBCUtil.getdbConnection();
-	String sql="insert into student values(?,?,?,?,?,?,?,?,?,?)";
+	String sql="insert into student(sname,smobile,scity,sstate,sdob,semail,spassword,gender,sdepartment) values(?,?,?,?,?,?,?,?,?)";
 	ps=con.prepareStatement(sql);
-	ps.setInt(1,sto.getId());
-	ps.setString(2,sto.getName());
-	ps.setString(3,sto.getMobile());
-	ps.setString(4,sto.getCity());
-	ps.setString(5,sto.getState());
-	ps.setString(7,sto.getDateofbirth());
-	ps.setString(6,sto.getEmail());
-	ps.setString(8,sto.getPassword());
-	ps.setString(9,sto.getGender());
-	ps.setString(10,sto.getDepartment());
+	//ps.setString(1,sto.getId());
+	ps.setString(1,sto.getName());
+	ps.setString(2,sto.getMobile());
+	ps.setString(3,sto.getCity());
+	ps.setString(4,sto.getState());
+	ps.setString(6,sto.getDateofbirth());
+	ps.setString(5,sto.getEmail());
+	ps.setString(7,sto.getPassword());
+	ps.setString(8,sto.getGender());
+	ps.setString(9,sto.getDepartment());
 	x=ps.executeUpdate();
 }catch(Exception e) {
 	e.printStackTrace();
@@ -31,8 +31,9 @@ finally {JDBCUtil.cleanup(ps,con);
 return x;
 }
 
-public static int verifyStudent(String email, String pwd) {
+public static String verifyStudent(String email, String pwd) {
 	int x=0;
+	String sid=null;
 	Connection con=null;
 	PreparedStatement ps=null;
 	ResultSet rs=null;
@@ -48,6 +49,7 @@ public static int verifyStudent(String email, String pwd) {
 		rs = ps.executeQuery();
 		if(rs.next()) {
 		x=1;
+		sid=rs.getString(1);
 		System.out.println(x);
 		System.out.println("Student verified");
 		}
@@ -59,9 +61,9 @@ public static int verifyStudent(String email, String pwd) {
 	}
 	System.out.println("returning to calling method()");
 	System.out.println(x);
-	return x;
+	return sid;
 }
-public int verifyStudent(int studid) {
+public int verifyStudent(String studid) {
 	int x=0;
 	Connection con=null;
 	PreparedStatement ps=null;
@@ -73,7 +75,7 @@ public int verifyStudent(int studid) {
 		con=JDBCUtil.getdbConnection();
 		String sql="Select * from student where sid= ?";
 		ps=con.prepareStatement(sql);
-		ps.setInt(1,studid);
+		ps.setString(1,studid);
 		
 		rs = ps.executeQuery();
 		if(rs.next()) {

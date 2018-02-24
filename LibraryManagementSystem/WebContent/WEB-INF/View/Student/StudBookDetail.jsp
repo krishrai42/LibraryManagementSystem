@@ -26,27 +26,19 @@ if(session!=null&&session.getAttribute("Role")=="User") {
 
                    <tbody>
 <%
-
 		BookList = (List<BookIssueTO> )request.getAttribute("BOOKSDETAIL");
 	
 		if(BookList != null && !BookList.isEmpty()) {
 
 			for(int i=0;i<BookList.size();i++) {		
-		
-		%>
-
+%>		
 		<tr>
-
-			
-		
 			<td><%=BookList.get(i).getSid() %></td>
 			<td><%=BookList.get(i).getBid() %></td>
 			<td><%=BookList.get(i).getBname() %></td>
 			<td><%=BookList.get(i).getIssue_date() %></td>
 			<td><%=BookList.get(i).getReturn_date() %></td>
 			<td><%=BookList.get(i).getFine() %></td>
-			
-
 		</tr>
 
 
@@ -70,11 +62,7 @@ if(session!=null&&session.getAttribute("Role")=="User") {
                 </table>
                 <h3> ${BOOKSDETAIL}</h3>
                 
-
-
-<h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/Function/searchbook.jsp"> Search Another Books</a> </h3>
-
-<h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/librarian/LibrarianHome.jsp"> move to home page</a> </h3>
+<h3><a href="home.jsp?myUrlVariable=/WEB-INF/View/Student/StudentHome.jsp"> move to home page</a> </h3>
 <%} 
  
 

@@ -23,14 +23,16 @@ public class Studentlogin extends HttpServlet {
 		StudentService studentservice=new StudentService();
 		String email=req.getParameter("email");
 		String pwd=req.getParameter("password");
-		int x=StudentService.verifyStudent(email,pwd);
+		String x=StudentService.verifyStudent(email,pwd);
+		
 		PrintWriter out=res.getWriter();
 		System.out.println(x);
 		HttpSession session=req.getSession();
 		String result="";
-		if(x==1) {
+		if(x!=null) {
 		session.setAttribute("Email", email);
 		session.setAttribute("Role", "User");
+		session.setAttribute("SID",x);
 		out.println("Login Success");
 		result="/WEB-INF/View/Student/StudentHome.jsp";	
 	}

@@ -1,7 +1,7 @@
 package com.librarymanagement.model;
 
 public class StudentTO {
-	private int id;
+	private String id;
 	private String name; 
 	private String mobile;
 	private String city;
@@ -11,7 +11,21 @@ public class StudentTO {
 	private String password;
 	private String gender;
 	private String department;
-	public StudentTO(int id, String name, String mobile, String city, String state, String email, String dateofbirth,
+	
+	public StudentTO(String name, String mobile, String city, String state, String email, String dateofbirth,
+			String password, String gender, String department) {
+		super();
+		this.name = name;
+		this.mobile = mobile;
+		this.city = city;
+		this.state = state;
+		this.email = email;
+		this.dateofbirth = dateofbirth;
+		this.password = password;
+		this.gender = gender;
+		this.department = department;
+	}
+	public StudentTO(String id, String name, String mobile, String city, String state, String email, String dateofbirth,
 			String password, String gender, String department) {
 		super();
 		this.id = id;
@@ -25,10 +39,10 @@ public class StudentTO {
 		this.gender = gender;
 		this.department = department;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {

@@ -29,11 +29,13 @@ public class IssueBook extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out=res.getWriter();
-		int studid=Integer.parseInt(req.getParameter("sid"));
-		int bookid=Integer.parseInt(req.getParameter("bid"));
+		String studid=req.getParameter("sid");
+		String bookid=req.getParameter("bid");
 		String issuedate=req.getParameter("date");
 		String result="";
 		BookService bs=new BookService();
+		//StudentService ss=new StudentService();
+	//	System.out.println("checking Student status");
 		System.out.println("checking book status");
 		String value=bs.checkbookstatus(bookid);
 		System.out.println(value);  
@@ -56,8 +58,8 @@ public class IssueBook extends HttpServlet {
 				con.setAutoCommit(false);
 				System.out.println("starting transaction");
 				cs=con.prepareCall("call Issue_Book(?,?,?)");
-				cs.setInt(1, studid);
-				cs.setInt(2, bookid);
+				cs.setString(1, studid);
+				cs.setString(2, bookid);
 				cs.setString(3, issuedate);
 				cs.execute();
 				System.out.println("Book Issued Successfully");

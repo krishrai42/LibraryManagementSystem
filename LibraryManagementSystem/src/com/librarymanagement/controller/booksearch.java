@@ -13,7 +13,7 @@ public class booksearch {
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	List<BookTO> books = new ArrayList<BookTO>();
-	public  List <BookTO> searchbookID(int bid) {
+	public  List <BookTO> searchbookID(String bid) {
 		int x=0;
 		
 		System.out.println("search book called()");
@@ -21,12 +21,12 @@ public class booksearch {
 			con=JDBCUtil.getdbConnection();
 			String sql="Select * from book where bid= ?";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1,bid);
+			ps.setString(1,bid);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt(1));
+				bto.setBookid(rs.getString(1));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));
@@ -62,7 +62,7 @@ public class booksearch {
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt("bid"));
+				bto.setBookid(rs.getString("bid"));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));
@@ -99,7 +99,7 @@ public class booksearch {
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt("bid"));
+				bto.setBookid(rs.getString("bid"));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));
@@ -135,7 +135,7 @@ public class booksearch {
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt("bid"));
+				bto.setBookid(rs.getString("bid"));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));
@@ -193,7 +193,7 @@ public class booksearch {
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt("bid"));
+				bto.setBookid(rs.getString("bid"));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));
@@ -230,7 +230,7 @@ public class booksearch {
 			while(rs.next()) {
 				x=1;
 				BookTO bto = new BookTO(rs);
-				bto.setBookid(rs.getInt("bid"));
+				bto.setBookid(rs.getString("bid"));
 				bto.setBookName(rs.getString("bname"));
 				bto.setBookAuthor(rs.getString("bauthor"));
 				bto.setBookCategory(rs.getString("bcategory"));

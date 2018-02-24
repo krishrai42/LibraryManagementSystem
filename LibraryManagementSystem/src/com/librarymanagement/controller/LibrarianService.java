@@ -9,13 +9,13 @@ PreparedStatement ps=null;
 Connection con = null;
 try {
 	con=JDBCUtil.getdbConnection();
-	String sql="insert into librarian values(?,?,?,?,?)";
+	String sql="insert into librarian(lname,lemail,lpassword,lgender) values(?,?,?,?)";
 	ps=con.prepareStatement(sql);
-	ps.setInt(1,lto.getId());
-	ps.setString(2,lto.getName());
-	ps.setString(3,lto.getEmail());
-	ps.setString(4,lto.getPassword());
-	ps.setString(5,lto.getGender());
+	//ps.setInt(1,lto.getId());
+	ps.setString(1,lto.getName());
+	ps.setString(2,lto.getEmail());
+	ps.setString(3,lto.getPassword());
+	ps.setString(4,lto.getGender());
 	x=ps.executeUpdate();
 }catch(Exception e) {
 	e.printStackTrace();
@@ -36,7 +36,7 @@ protected  int verifyLibrarian(String email, String pwd) {
 	
 	try {
 		con=JDBCUtil.getdbConnection();
-		String sql="Select * from librarian where email= ? and password=?";
+		String sql="Select * from librarian where lemail= ? and lpassword=?";
 		ps=con.prepareStatement(sql);
 		ps.setString(1,email);
 		ps.setString(2, pwd);
@@ -60,7 +60,7 @@ public String getPasswordbyemail(String email) {
 	ResultSet rs=null;
 	try {
 		con=JDBCUtil.getdbConnection();
-		String sql="Select password from librarian where email= ?";
+		String sql="Select password from librarian where lemail= ?";
 		ps=con.prepareStatement(sql);
 		ps.setString(1,email);
 		

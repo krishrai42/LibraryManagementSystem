@@ -11,7 +11,7 @@ static {
 
 
 public static Connection getdbConnection()throws SQLException{
-String url="jdbc:mysql://localhost:3306/librarymanagement";
+String url="jdbc:mysql://localhost:3306/dummydb";
 Connection con=DriverManager.getConnection(url,"root","indurai");
 return con;
 }

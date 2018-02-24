@@ -28,7 +28,7 @@ public class DeleteBook extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int id=Integer.parseInt(req.getParameter("name"));
+		String id=(req.getParameter("name"));
 		BookService bs=new BookService();
 		int x=bs.deletebook(id);
 		String result="";

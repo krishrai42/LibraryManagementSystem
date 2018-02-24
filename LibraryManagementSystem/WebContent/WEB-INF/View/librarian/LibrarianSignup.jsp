@@ -10,7 +10,7 @@
 <pre>
 <form action="libreg" method="post"onsubmit="return Function()">
 <h3>Enter The required Details</h3>
- LibrarianID:<input type="text" name="id"/>
+ 
  Name:<input type="text" id="Name"name="name"/>
  Email:<input type="email" id="email"name="email"/>
  Password:<input type="password" id="pwd"name="password"/>

@@ -19,7 +19,6 @@
 <pre>
 <form action="./studreg" method="post"onsubmit="return Function()">
 <h3>Enter The required Details</h3>
- StudentID:<input type="text" name="id"/>
  Name:<input type="text" name="name"id="name"/>
  Mobile:<input type="text" name="mobile"id="mobile"/>
  City:<input type="text" name="city"id="city"/>

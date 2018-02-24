@@ -32,12 +32,12 @@ public class Librarianregister extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		LibrarianService librarianService=new LibrarianService();
 		// TODO Auto-generated method stub
-		int id=Integer.parseInt(req.getParameter("id"));
+	//	int id=Integer.parseInt(req.getParameter("id"));
 		String name=req.getParameter("name");
 		String email=req.getParameter("email");
 		String pwd=req.getParameter("password");
 		String gender=req.getParameter("gender");
-		librarianTO lto=new librarianTO(id, name, email, pwd, gender);
+		librarianTO lto=new librarianTO(name, email, pwd, gender);
 		System.out.println("register librarian called()");
 		int x=librarianService.registerLibrarian(lto);
 		System.out.println(x);

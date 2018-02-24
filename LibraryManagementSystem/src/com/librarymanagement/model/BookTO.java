@@ -1,7 +1,7 @@
 package com.librarymanagement.model;
 import java.sql.*;
 public class BookTO {
-	private int bookid;
+	private String bookid;
 	private String BookName;
 	private String BookAuthor;
 	private String BookCategory;
@@ -9,7 +9,18 @@ public class BookTO {
 	private String BookPublication;
 	private String BookYear;
 	private String BookStatus;
-	public BookTO(int bookid, String bookName, String bookAuthor, String bookCategory, String bookSubcategory,
+	public BookTO(String bookName, String bookAuthor, String bookCategory, String bookSubcategory,
+			String bookPublication, String bookYear, String bookStatus) {
+		super();
+		BookName = bookName;
+		BookAuthor = bookAuthor;
+		BookCategory = bookCategory;
+		BookSubcategory = bookSubcategory;
+		BookPublication = bookPublication;
+		BookYear = bookYear;
+		BookStatus = bookStatus;
+	}
+	public BookTO(String bookid, String bookName, String bookAuthor, String bookCategory, String bookSubcategory,
 			String bookPublication, String bookYear, String bookStatus) {
 		super();
 		this.bookid = bookid;
@@ -21,10 +32,10 @@ public class BookTO {
 		BookYear = bookYear;
 		BookStatus = bookStatus;
 	}
-	public int getBookid() {
+	public String getBookid() {
 		return bookid;
 	}
-	public void setBookid(int bookid) {
+	public void setBookid(String bookid) {
 		this.bookid = bookid;
 	}
 	public String getBookName() {
@@ -70,7 +81,7 @@ public class BookTO {
 		BookStatus = bookStatus;
 	}
 	public BookTO (ResultSet resultset) throws SQLException {
-		this.bookid = resultset.getInt("bid");
+		this.bookid = resultset.getString("bid");
         this.BookName = resultset.getString("bname");
         this.BookAuthor = resultset.getString("bauthor");
         this.BookCategory = resultset.getString("bcategory");

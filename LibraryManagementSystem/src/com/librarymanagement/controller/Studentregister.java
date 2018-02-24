@@ -30,7 +30,7 @@ public class Studentregister extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		StudentService studentservice=new StudentService();
 		// TODO Auto-generated method stub
-		int id=Integer.parseInt(req.getParameter("id"));
+		
 		String name=req.getParameter("name");
 		String email=req.getParameter("email");
 		String pwd=req.getParameter("password");
@@ -40,7 +40,7 @@ public class Studentregister extends HttpServlet {
 		String dob=req.getParameter("dob");
 		String dep=req.getParameter("dept");
 		String mob=req.getParameter("mobile");
-		StudentTO sto=new StudentTO(id, name,mob,city,state,dob, email, pwd, gender,dep);
+		StudentTO sto=new StudentTO(name,mob,city,state,dob, email, pwd, gender,dep);
 		System.out.println("register Student called()");
 		int x=StudentService.registerStudent(sto);
 		System.out.println(x);

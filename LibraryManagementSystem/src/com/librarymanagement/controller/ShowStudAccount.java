@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.librarymanagement.model.BookIssueTO;
 import com.librarymanagement.model.BookTO;
@@ -29,7 +30,10 @@ public class ShowStudAccount extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int studid=Integer.parseInt(req.getParameter("sid"));
+	//	int studid=Integer.parseInt(req.getParameter("sid"));
+		HttpSession session=req.getSession(false);
+		String studid= (String) session.getAttribute("SID");
+		System.out.println(studid);
 		List<BookIssueTO> books = new ArrayList<BookIssueTO>();
 		CallableStatement cs=null;
 		Connection con = null;
@@ -40,7 +44,7 @@ public class ShowStudAccount extends HttpServlet {
 			con=JDBCUtil.getdbConnection();
 			System.out.println("calling show book");
 			cs=con.prepareCall("call Show_Book(?)");
-			cs.setInt(1, studid);
+			cs.setString(1, studid);
 			cs.execute();
 			 rs = cs.getResultSet();
 		
@@ -48,8 +52,8 @@ public class ShowStudAccount extends HttpServlet {
 				 x=1;
 				System.out.println(x);
 				BookIssueTO bto = new BookIssueTO(rs);
-				bto.setSid(rs.getInt(1));
-				bto.setBid(rs.getInt(2));
+				bto.setSid(rs.getString("sid"));
+				bto.setBid(rs.getString("bid"));
 				bto.setBname(rs.getString("bname"));
 				bto.setIssue_date(rs.getDate("issue_date"));
 				bto.setReturn_date(rs.getDate("return_date"));

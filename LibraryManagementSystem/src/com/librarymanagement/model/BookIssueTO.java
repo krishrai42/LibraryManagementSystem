@@ -4,14 +4,14 @@ import java.sql.ResultSet;
 import java.util.Date;
 
 public class BookIssueTO {
- private int sid;
- private int bid;
+ private String sid;
+ private String bid;
  private String bname;
  private Date Issue_date;
  private Date Return_date;
  private double Fine;
 
-public BookIssueTO(int sid, int bid, String bname, Date issue_date, Date return_date, double fine) {
+public BookIssueTO(String sid, String bid, String bname, Date issue_date, Date return_date, double fine) {
 	super();
 	this.sid = sid;
 	this.bid = bid;
@@ -47,16 +47,16 @@ public String getBname() {
 public void setBname(String bname) {
 	this.bname = bname;
 }
-public int getBid() {
+public String getBid() {
 	return bid;
 }
-public void setBid(int bid) {
+public void setBid(String bid) {
 	this.bid = bid;
 }
-public int getSid() {
+public String getSid() {
 	return sid;
 }
-public void setSid(int sid) {
+public void setSid(String sid) {
 	this.sid = sid;
 }
 

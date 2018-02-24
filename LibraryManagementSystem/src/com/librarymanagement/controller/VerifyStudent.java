@@ -18,7 +18,7 @@ public class VerifyStudent extends HttpServlet {
        
    
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int id=Integer.parseInt(req.getParameter("name"));
+		String id=req.getParameter("name");
 		StudentService ss=new StudentService();
 		int x=ss.verifyStudent(id);
 		String result="";

@@ -1,12 +1,20 @@
 package com.librarymanagement.model;
 
 public class librarianTO {
-private int id;
+private String id;
 private String name; 
 private String email;
 private String password;
 private String gender;
-public librarianTO(int id, String name, String email, String password, String gender) {
+
+public librarianTO(String name, String email, String password, String gender) {
+	super();
+	this.name = name;
+	this.email = email;
+	this.password = password;
+	this.gender = gender;
+}
+public librarianTO(String id, String name, String email, String password, String gender) {
 	super();
 	this.id = id;
 	this.name = name;
@@ -14,10 +22,10 @@ public librarianTO(int id, String name, String email, String password, String ge
 	this.password = password;
 	this.gender = gender;
 }
-public int getId() {
+public String getId() {
 	return id;
 }
-public void setId(int id) {
+public void setId(String id) {
 	this.id = id;
 }
 public String getName() {

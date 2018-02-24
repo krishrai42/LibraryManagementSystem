@@ -31,7 +31,7 @@ public class SearchBook extends HttpServlet {
 		System.out.println(value);
 		if (value.equals("ID")){
 			System.out.println("calling searchbook id ()");
-			int id=Integer.parseInt(req.getParameter("name"));
+			String id=req.getParameter("name");
 			List<BookTO> bto=bs.searchbookID(id);
 			req.setAttribute("BOOK", bto);
 			String result="/WEB-INF/View/Function/booksearchresult.jsp";

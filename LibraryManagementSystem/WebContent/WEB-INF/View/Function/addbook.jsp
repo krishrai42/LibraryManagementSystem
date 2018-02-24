@@ -14,7 +14,7 @@ if(session!=null&&session.getAttribute("Role")=="Admin") {
 <h3> ${ERR}</h3>
 <form action="addbook" method="post"onsubmit="return Function()">
 <pre>
-Book ID:<input type="text" name="bid" id="bid">
+
 Book Name:<input type="text" name="bname" id="bname">
 Book Author:<input type="text" name="bauthor" id="bauth">
 Book Category:<input type="text" name="bcategory"id="bcat" >

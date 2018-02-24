@@ -26,7 +26,7 @@ public class AddBook extends HttpServlet {
 		  String role=(String) session.getAttribute("Role");
 		  if(session!=null&&role=="Admin") {
 		BookService bookservice=new BookService();
-		int id=Integer.parseInt(req.getParameter("bid"));
+		//int id=Integer.parseInt(req.getParameter("bid"));
 		String bname=req.getParameter("bname");
 		String bauth=req.getParameter("bauthor");
 		String bcatg=req.getParameter("bcategory");
@@ -34,7 +34,7 @@ public class AddBook extends HttpServlet {
 		String bpub=req.getParameter("bpub");
 		String byear=req.getParameter("byear");
 		String bstat=req.getParameter("status");
-		BookTO bto=new BookTO(id,bname,bauth,bcatg,bsub,bpub,byear,bstat);
+		BookTO bto=new BookTO(bname,bauth,bcatg,bsub,bpub,byear,bstat);
 		int x=bookservice.addbook(bto);
 		System.out.println(x);
 		String result="";
